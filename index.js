@@ -17,7 +17,7 @@ const withoutDirectoryOrMissing = and(not(isDirectory), existing)
 const getDependenciesForFile = filename =>
   precinct.paperwork(filename, PRECINCT_CONFIG)
 
-const isLocal = path => path.includes('./')
+const isLocal = path => path.includes('./') || path === '.' || path === '..'
 const withoutLocalOrBuiltinModules = and(not(isLocal), not(isBuiltInModule))
 
 const stripPath = path => path.split('/')[0]
