@@ -4,7 +4,10 @@
   "main": "index.js",
   "author": "Seb Insua <me@sebinsua.com>",
   "license": "MIT",
-  "files": ["bin.js", "index.js"],
+  "files": [
+    "bin.js",
+    "index.js"
+  ],
   "engines": {
     "node": ">= 6"
   },
@@ -12,7 +15,10 @@
     "get-dependencies-from-source": "./bin.js"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --write", "git add"]
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
     "commitmsg": "commitlint -e",
