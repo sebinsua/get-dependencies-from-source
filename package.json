@@ -1,0 +1,35 @@
+{
+  "name": "get-dependencies-from-source",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Seb Insua <me@sebinsua.com>",
+  "license": "MIT",
+  "files": ["bin.js", "index.js"],
+  "engines": {
+    "node": ">= 6"
+  },
+  "bin": {
+    "get-dependencies-from-source": "./bin.js"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["prettier --write", "git add"]
+  },
+  "scripts": {
+    "commitmsg": "commitlint -e",
+    "precommit": "lint-staged",
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "is-builtin-module": "^2.0.0",
+    "precinct": "^3.8.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^5.2.0",
+    "@commitlint/config-conventional": "^5.1.3",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.8.2",
+    "standard-version": "^4.2.0"
+  }
+}
