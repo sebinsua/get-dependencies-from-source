@@ -36,9 +36,9 @@ function getDependencies(globs) {
       (deps, filename) => deps.concat(getDependenciesForFile(filename)),
       []
     )
-  )
     .filter(withoutLocalOrBuiltinModules)
     .map(stripPath)
+  )
 
   return dependencies
 }
