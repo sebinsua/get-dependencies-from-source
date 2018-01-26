@@ -20,7 +20,12 @@ const getDependenciesForFile = filename =>
 const isLocal = path => path.includes('./') || path === '.' || path === '..'
 const withoutLocalOrBuiltinModules = and(not(isLocal), not(isBuiltInModule))
 
-const stripPath = path => path.split('/')[0]
+const stripPath = importPath => {
+  const hasOrganisation = importPath.charAt(0) === '@'
+  const split = importPath.split('/')
+  const pkgName = split.slice(0, hasOrganisation ? 2 : 1).join('/')
+  return pkgName
+}
 
 function getDependencies(globs) {
   const filenames = uniq(
